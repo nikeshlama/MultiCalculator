@@ -20,10 +20,15 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     GreetingView(Greeting().greet())
+                    CalcView("this is the result space")
                 }
             }
         }
     }
+}
+@Composable
+fun CalcView(calculationView: String) {
+    Text(text = "Calculation View: $calculationView")
 }
 
 @Composable
