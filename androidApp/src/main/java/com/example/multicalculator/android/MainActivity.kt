@@ -20,15 +20,23 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     GreetingView(Greeting().greet())
-                    CalcView("this is the result space")
+                    CalcView("this is the Calculation View space")
+                    CalcRow("this is the Calculation Row space")
                 }
             }
         }
     }
 }
+//creating CalcView Function
 @Composable
 fun CalcView(calculationView: String) {
     Text(text = "Calculation View: $calculationView")
+}
+
+//Creating CalcRow Function
+@Composable
+fun CalcRow(calculationRow: String) {
+     Text(text = "Calculation Row: $calculationRow")
 }
 
 @Composable
