@@ -25,6 +25,8 @@ class MainActivity : ComponentActivity() {
                     CalcDisplay("this is the Calculation Display space")
                     CalcNumericButton("this is the Calculation Numeric Button space")
                     CalcOperationButton("this is the Calculation Operation Button space")
+                    CalcEqualsButton("this is the Calculation Equals Button space")
+
                 }
             }
         }
@@ -59,6 +61,13 @@ fun CalcNumericButton (calculationNumericButton: String) {
 fun CalcOperationButton (calculationOperationButton: String) {
     Text(text = "Calculation Operation Button: $calculationOperationButton")
 }
+
+//Creating CalcEqualsButton function
+@Composable
+fun CalcEqualsButton (calculationEqualsButton: String) {
+    Text(text ="Calculation Equals Button: $calculationEqualsButton")
+}
+
 @Composable
 fun GreetingView(text: String) {
     Text(text = text)
