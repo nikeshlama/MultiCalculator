@@ -22,6 +22,7 @@ class MainActivity : ComponentActivity() {
                     GreetingView(Greeting().greet())
                     CalcView("this is the Calculation View space")
                     CalcRow("this is the Calculation Row space")
+                    CalcDisplay("this is the Calculation Display space")
                 }
             }
         }
@@ -37,6 +38,12 @@ fun CalcView(calculationView: String) {
 @Composable
 fun CalcRow(calculationRow: String) {
      Text(text = "Calculation Row: $calculationRow")
+}
+
+//Creating CalcDisplay Function
+@Composable
+fun CalcDisplay(calculationDisplay: String) {
+    Text(text = "Calculation Display: $calculationDisplay")
 }
 
 @Composable
