@@ -78,11 +78,14 @@ fun CalcView(){
     }
 }
 @Composable
-fun CalcNumericButton (calculationNumericButton: String) {
-    Text(text = "Calculation Numeric Button: $calculationNumericButton")
+fun CalcRow(display: MutableState<String>, startNum : Int, numButtons : Int){
+    val endNum = startNum + numButtons
+    Row (modifier = Modifier.padding(0.dp)){
+        for (i in startNum until endNum){
+            CalcNumericButton(number = i, display = display)
+        }
+    }
 }
-
-//Creating CalcOperationButton function
 @Composable
 fun CalcOperationButton (calculationOperationButton: String) {
     Text(text = "Calculation Operation Button: $calculationOperationButton")
