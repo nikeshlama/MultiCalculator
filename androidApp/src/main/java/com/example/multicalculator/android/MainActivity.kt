@@ -130,9 +130,11 @@ fun CalcOperationButton(operation : String , display: MutableState<String>){
     }
 }
 @Composable
-fun DefaultPreview() {
-    MyApplicationTheme {
-        GreetingView("Hello, Android!")
+fun CalcEqualsButton(display : MutableState<String>){
+    Button(modifier = Modifier
+        .padding(4.dp)
+        .size(95.dp),onClick = {display.value = "0"} , colors = ButtonDefaults.buttonColors(backgroundColor = Color.Blue) ,  shape = RoundedCornerShape(10.dp)) {
+        Text(text = "=" ,  fontSize = 30.sp , fontWeight = FontWeight.Bold)
     }
 
 
