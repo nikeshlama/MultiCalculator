@@ -109,10 +109,16 @@ fun CalcDisplay(display: MutableState<String>) {
 
 
 @Composable
-fun CalcEqualsButton (calculationEqualsButton: String) {
-    Text(text ="Calculation Equals Button: $calculationEqualsButton")
+fun CalcNumericButton(number : Int , display: MutableState<String>){
+    Button(onClick = {
+        display.value += number.toString()
+    }, modifier = Modifier
+        .padding(4.dp)
+        .size(95.dp) , colors = ButtonDefaults.buttonColors(backgroundColor = Color.Blue), shape = RoundedCornerShape(10.dp) )
+    {
+        Text(text = number.toString() , fontSize = 25.sp , fontWeight = FontWeight.Bold)
+    }
 }
-
 @Composable
 fun GreetingView(text: String) {
     Text(text = text)
