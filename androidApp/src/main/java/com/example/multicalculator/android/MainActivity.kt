@@ -120,11 +120,15 @@ fun CalcNumericButton(number : Int , display: MutableState<String>){
     }
 }
 @Composable
-fun GreetingView(text: String) {
-    Text(text = text)
+fun CalcOperationButton(operation : String , display: MutableState<String>){
+    Button(onClick = { /*TODO*/ },
+        modifier = Modifier
+            .padding(4.dp)
+            .size(95.dp),colors = ButtonDefaults.buttonColors(backgroundColor = Color.Blue), shape = RoundedCornerShape(10.dp)
+    ) {
+        Text(text = operation , fontSize = 30.sp , fontWeight = FontWeight.Bold)
+    }
 }
-
-@Preview
 @Composable
 fun DefaultPreview() {
     MyApplicationTheme {
