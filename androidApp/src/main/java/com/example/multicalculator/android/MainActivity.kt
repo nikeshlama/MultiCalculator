@@ -87,8 +87,24 @@ fun CalcRow(display: MutableState<String>, startNum : Int, numButtons : Int){
     }
 }
 @Composable
-fun CalcOperationButton (calculationOperationButton: String) {
-    Text(text = "Calculation Operation Button: $calculationOperationButton")
+fun CalcDisplay(display: MutableState<String>) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(100.dp)
+            .padding(10.dp)
+            .background(Color.White)
+            .border(1.dp, Color.Gray, RoundedCornerShape(10.dp)),
+        contentAlignment = Alignment.CenterStart
+    ) {
+        Text(
+            text = display.value,
+            fontSize = 30.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Start,
+            modifier = Modifier.padding(10.dp)
+        )
+    }
 }
 
 
