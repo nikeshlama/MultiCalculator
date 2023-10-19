@@ -86,3 +86,18 @@ fun CalcView() {
             }
         }
     }
+    //function equalPress logic applied
+    fun equalsPress() {
+        if (operation.isNotEmpty() && !complete) {
+            var answer = 0
+            when (operation) {
+                "+" -> answer = leftNumber + rightNumber
+                "-" -> answer = leftNumber - rightNumber
+                "*" -> answer = leftNumber * rightNumber
+                "/" -> answer = leftNumber / rightNumber
+            }
+            rightNumber = 0
+            complete = true
+            displayText = answer.toString()
+        }
+    }
