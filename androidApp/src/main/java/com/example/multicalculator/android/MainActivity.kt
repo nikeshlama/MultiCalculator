@@ -174,3 +174,25 @@ fun CalcRow(onPress: (number: Int) -> Unit, startNum: Int, numButtons: Int) {
     }
 }
 
+//CalcDisplay function logic applied
+@Composable
+fun CalcDisplay(display: String) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(100.dp)
+            .padding(10.dp)
+            .background(Color.White)
+            .border(1.dp, Color.Gray, RoundedCornerShape(10.dp)),
+        contentAlignment = Alignment.CenterStart
+    ) {
+        Text(
+            text = display,
+            fontSize = 30.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Start,
+            modifier = Modifier.padding(10.dp)
+        )
+    }
+}
+
