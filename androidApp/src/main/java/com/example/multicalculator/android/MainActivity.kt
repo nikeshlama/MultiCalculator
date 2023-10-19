@@ -109,3 +109,57 @@ fun CalcView() {
         complete = false
         displayText = "0"
     }
+//UI code for CalcDisplay
+    Column(modifier = Modifier
+        .background(Color.LightGray)
+        .padding(0.dp)) {
+        Row {
+            CalcDisplay(displayText)
+        }
+        Row {
+            Column {
+                for (i in 7 downTo 1 step 3) {
+                    CalcRow(
+                        onPress = { number -> numberPress(number) },
+                        startNum = i,
+                        numButtons = 3
+                    )
+                }
+                Row {
+                    CalcNumericButton(onPress = { number -> numberPress(number) }, number = 0)
+                    CalcEqualsButton(onPress = { equalsPress() })
+                }
+            }
+
+            Column {
+                CalcOperationButton(
+                    onPress = { op -> operationPress(op) },
+                    operation = "+"
+                )
+                CalcOperationButton(
+                    onPress = { op -> operationPress(op) },
+                    operation = "-"
+                )
+                CalcOperationButton(
+                    onPress = { op -> operationPress(op) },
+                    operation = "*"
+                )
+                CalcOperationButton(
+                    onPress = { op -> operationPress(op) },
+                    operation = "/"
+                )
+//button created for Clear
+                Button(
+                    onClick = { clear() },
+                    modifier = Modifier
+                        .padding(4.dp)
+                        .size(95.dp),
+                    colors = ButtonDefaults.buttonColors(backgroundColor = Color.Red),
+                    shape = RoundedCornerShape(10.dp)
+                ) {
+                    Text(text = "C", fontSize = 30.sp, fontWeight = FontWeight.Bold)
+                }
+            }
+        }
+    }
+}
