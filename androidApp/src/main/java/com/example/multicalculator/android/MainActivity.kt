@@ -209,4 +209,18 @@ fun CalcNumericButton(onPress: (number: Int) -> Unit, number: Int) {
         Text(text = number.toString(), fontSize = 25.sp, fontWeight = FontWeight.Bold)
     }
 }
+//CalcOperationButton function logic applied
+@Composable
+fun CalcOperationButton(onPress: (operation: String) -> Unit, operation: String) {
+    Button(
+        onClick = { onPress(operation) },
+        modifier = Modifier
+            .padding(4.dp)
+            .size(95.dp),
+        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Blue),
+        shape = RoundedCornerShape(10.dp)
+    ) {
+        Text(text = operation, fontSize = 30.sp, fontWeight = FontWeight.Bold)
+    }
+}
 
