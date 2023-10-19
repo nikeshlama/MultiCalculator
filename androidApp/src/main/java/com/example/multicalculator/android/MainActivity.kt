@@ -223,4 +223,18 @@ fun CalcOperationButton(onPress: (operation: String) -> Unit, operation: String)
         Text(text = operation, fontSize = 30.sp, fontWeight = FontWeight.Bold)
     }
 }
+//CalcEqualsButton logic applied
+@Composable
+fun CalcEqualsButton(onPress: () -> Unit) {
+    Button(
+        modifier = Modifier
+            .padding(4.dp)
+            .size(95.dp),
+        onClick = { onPress() },
+        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Blue),
+        shape = RoundedCornerShape(10.dp)
+    ) {
+        Text(text = "=", fontSize = 30.sp, fontWeight = FontWeight.Bold)
+    }
+}
 
