@@ -101,3 +101,11 @@ fun CalcView() {
             displayText = answer.toString()
         }
     }
+    //function clear logic applied
+    fun clear() {
+        leftNumber = 0
+        rightNumber = 0
+        operation = ""
+        complete = false
+        displayText = "0"
+    }
