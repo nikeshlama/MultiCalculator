@@ -77,3 +77,12 @@ fun CalcView() {
             }
         }
     }
+    //function operationPress logic applied
+    fun operationPress(op: String) {
+        if (!complete) {
+            operation = op
+            if (leftNumber != 0) {
+                complete = false
+            }
+        }
+    }
